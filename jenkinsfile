@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn install' (1)
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true (2)    
+                sh 'mvn install' (1)   
             }
         }
         stage('Test') {
@@ -13,7 +12,6 @@ pipeline {
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
                 sh 'mvn test || true' (1)
-                junit '**/target/*.xml' (2)
             }
         }
       }  

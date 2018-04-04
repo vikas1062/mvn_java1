@@ -16,7 +16,6 @@ pipeline {
                 junit '**/target/*.xml' (2)
             }
         }
-        
         post {
         always {
             junit '**/target/*.xml'

@@ -14,10 +14,7 @@ pipeline {
                 sh 'mvn test || true' (1)
             }
         }
-      }  
-        post {
-        always {
-            junit '**/target/*.xml'
-        }
-     }
+     
+     }  
+     
 }
